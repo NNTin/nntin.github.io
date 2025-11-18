@@ -72,13 +72,16 @@ export default function ExperienceIcons() {
 
             const containerRect = containerRef.current.getBoundingClientRect();
             const containerWidth = containerRect.width - 56; // Account for padding (p-7 = 28px each side)
-            const containerHeight = containerRect.height - 56;
 
             const cols = 7;
             const iconSize = 32;
             const gap = 20; // 5 * 4 = 20px (gap-5)
             const cellWidth = (containerWidth - gap * (cols - 1)) / cols;
             const cellHeight = cellWidth; // Keep square cells
+            
+            // Calculate the actual grid height based on number of rows
+            const rows = Math.ceil(experience.length / cols);
+            const gridHeight = rows * cellHeight + (rows - 1) * gap;
 
             const initialStates: IconState[] = experience.map((_, index) => {
                 const row = Math.floor(index / cols);
@@ -130,7 +133,14 @@ export default function ExperienceIcons() {
 
                 const containerRect = containerRef.current.getBoundingClientRect();
                 const containerWidth = containerRect.width - 56;
-                const containerHeight = containerRect.height - 56;
+                
+                // Calculate the actual grid height based on number of rows
+                const cols = 7;
+                const gap = 20;
+                const cellWidth = (containerWidth - gap * (cols - 1)) / cols;
+                const cellHeight = cellWidth;
+                const rows = Math.ceil(experience.length / cols);
+                const containerHeight = rows * cellHeight + (rows - 1) * gap;
 
                 return prevStates.map((state, index) => {
                     const iconRef = iconRefsArray.current[index];
@@ -155,9 +165,9 @@ export default function ExperienceIcons() {
 
                         // Boundary collision detection (accounting for padding of 28px on each side)
                         const minX = 28 + iconWidth / 2;
-                        const maxX = containerWidth + 28 - iconWidth / 2;
+                        const maxX = 28 + containerWidth - iconWidth / 2;
                         const minY = 28 + iconHeight / 2;
-                        const maxY = containerHeight + 28 - iconHeight / 2;
+                        const maxY = 28 + containerHeight - iconHeight / 2;
 
                         if (newX <= minX || newX >= maxX) {
                             newVx = -newVx;

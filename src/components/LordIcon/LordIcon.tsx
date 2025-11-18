@@ -2,6 +2,19 @@
 
 import { useEffect } from "react";
 import lottie from "lottie-web";
+import React from "react";
+
+declare module 'react' {
+    namespace JSX {
+        interface IntrinsicElements {
+            'lord-icon': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+                src?: string;
+                trigger?: string;
+                colors?: string;
+            };
+        }
+    }
+}
 
 export function LordIcon(props: any) {
     useEffect(() => {

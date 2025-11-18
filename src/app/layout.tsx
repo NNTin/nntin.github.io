@@ -4,6 +4,7 @@ import Header from "@/components/Header/Header";
 import Socials from "@/components/Socials/Socials";
 import Status from "@/components/Status/Status";
 import Footer from "@/components/Footer/Footer";
+import DiscordCorner from "@/components/DiscordCorner/DiscordCorner";
 
 export const metadata: Metadata = {
     title: "Tin Nguyen",
@@ -32,6 +33,7 @@ export default function RootLayout({
                 ></link>
             </head>
             <body>
+                <DiscordCorner />
                 <main>
                     <div className="md:flex md:gap-10">
                         <div className="md:w-1/2 md:sticky top-[100px] h-fit md:flex flex-col gap-2">
