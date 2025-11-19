@@ -24,6 +24,9 @@ jobs:
       - name: Build static content
         run: npm run build
 
+      - name: Add CNAME file
+        run: echo "nntin.xyz" > out/CNAME
+
       - name: push out dir to the output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
