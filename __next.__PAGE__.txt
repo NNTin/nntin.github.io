@@ -1,0 +1,7 @@
+1:"$Sreact.fragment"
+2:I[88912,["/_next/static/chunks/9cc2cc21aabc46dd.js","/_next/static/chunks/fb993d93a40dae7a.js","/_next/static/chunks/03d6774cc869501a.js"],"default"]
+3:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+:HL["/_next/static/chunks/8fadc04068637261.css","style"]
+0:{"buildId":"dq-Xi7at3Y08q-e_24mY-","rsc":["$","$1","c",{"children":[[["$","div",null,{"children":["heard it is cool to display some icons ",["$","br",null,{}],"over the years i have worked with many technologies ",["$","br",null,{}],"the important skill is being able to adapt to new technologies."]}],["$","div",null,{"className":"mt-20","children":["$","$L2",null,{}]}]],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/8fadc04068637261.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/03d6774cc869501a.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null
