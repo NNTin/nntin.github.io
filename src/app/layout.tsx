@@ -5,6 +5,7 @@ import Socials from "@/components/Socials/Socials";
 import Status from "@/components/Status/Status";
 import Footer from "@/components/Footer/Footer";
 import DiscordCorner from "@/components/DiscordCorner/DiscordCorner";
+import DZoneBackground from "@/components/DZoneBackground/DZoneBackground";
 
 export const metadata: Metadata = {
     title: "Tin Nguyen",
@@ -33,6 +34,7 @@ export default function RootLayout({
                 ></link>
             </head>
             <body>
+                <DZoneBackground />
                 <DiscordCorner />
                 <main>
                     <div className="md:flex md:gap-10">
@@ -41,7 +43,8 @@ export default function RootLayout({
                                 Tin Nguyen
                             </h1>
                             <h2 className="text-2xl fields text-primary">
-                                TODO: Tinkerer, Tinkery, Tinkero, Tiny, Tinderbox, Drinkerbell, Din A4, Dean Winchester, ...
+                                TODO: Tinkerer, Tinkery, Tinkero, Tiny, Tinderbox, Drinkerbell, Din A4, Dean Winchester, ... <br />
+                                ‼️Work in progress‼️
                             </h2>
                             <p className="opacity-80 w-3/4">
                                 my little home on the web.
