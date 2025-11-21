@@ -71,14 +71,14 @@ export default function ExperienceIcons() {
             if (!containerRef.current) return;
 
             const containerRect = containerRef.current.getBoundingClientRect();
-            const containerWidth = containerRect.width - 56; // Account for padding (p-7 = 28px each side)
+            const padding = containerRect.width * 0.03;
+            const containerWidth = containerRect.width - (padding * 2);
 
             const cols = 7;
-            const iconSize = 32;
-            const gap = 20; // 5 * 4 = 20px (gap-5)
+            const gap = containerWidth * 0.02;
             const cellWidth = (containerWidth - gap * (cols - 1)) / cols;
             const cellHeight = cellWidth; // Keep square cells
-            
+
             // Calculate the actual grid height based on number of rows
             const rows = Math.ceil(experience.length / cols);
             const gridHeight = rows * cellHeight + (rows - 1) * gap;
@@ -87,8 +87,8 @@ export default function ExperienceIcons() {
                 const row = Math.floor(index / cols);
                 const col = index % cols;
 
-                const originalX = col * (cellWidth + gap) + cellWidth / 2 + 28;
-                const originalY = row * (cellHeight + gap) + cellHeight / 2 + 28;
+                const originalX = col * (cellWidth + gap) + cellWidth / 2 + padding;
+                const originalY = row * (cellHeight + gap) + cellHeight / 2 + padding;
 
                 // Generate random velocity
                 const speed = minVelocity + Math.random() * (maxVelocity - minVelocity);
@@ -132,11 +132,12 @@ export default function ExperienceIcons() {
                 if (!containerRef.current) return prevStates;
 
                 const containerRect = containerRef.current.getBoundingClientRect();
-                const containerWidth = containerRect.width - 56;
-                
+                const padding = containerRect.width * 0.03;
+                const containerWidth = containerRect.width - (padding * 2);
+
                 // Calculate the actual grid height based on number of rows
                 const cols = 7;
-                const gap = 20;
+                const gap = containerWidth * 0.02;
                 const cellWidth = (containerWidth - gap * (cols - 1)) / cols;
                 const cellHeight = cellWidth;
                 const rows = Math.ceil(experience.length / cols);
@@ -163,11 +164,11 @@ export default function ExperienceIcons() {
                         let newVx = state.vx;
                         let newVy = state.vy;
 
-                        // Boundary collision detection (accounting for padding of 28px on each side)
-                        const minX = 28 + iconWidth / 2;
-                        const maxX = 28 + containerWidth - iconWidth / 2;
-                        const minY = 28 + iconHeight / 2;
-                        const maxY = 28 + containerHeight - iconHeight / 2;
+                        // Boundary collision detection
+                        const minX = padding + iconWidth / 2;
+                        const maxX = padding + containerWidth - iconWidth / 2;
+                        const minY = padding + iconHeight / 2;
+                        const maxY = padding + containerHeight - iconHeight / 2;
 
                         if (newX <= minX || newX >= maxX) {
                             newVx = -newVx;
@@ -215,7 +216,7 @@ export default function ExperienceIcons() {
     };
 
     return (
-        <div ref={containerRef} className="bg-light p-7 rounded-3xl shadow-lg" style={{ position: 'relative' }}>
+        <div ref={containerRef} className="bg-light p-[3%] rounded-3xl shadow-lg" style={{ position: 'relative' }}>
             {/* Settings Button */}
             {/* <button
                 className={`${styles.settingsButton} absolute top-4 right-4 z-10 cursor-pointer text-heading hover:text-primary transition-colors`}
@@ -349,7 +350,7 @@ export default function ExperienceIcons() {
                 </div>
             )}
 
-            <div style={{ position: 'relative', minHeight: '400px' }}>
+            <div style={{ position: 'relative' }}>
                 {iconStates.length > 0 && experience.map((item, i) => (
                     <div
                         key={i}

@@ -11,6 +11,7 @@ declare module 'react' {
                 src?: string;
                 trigger?: string;
                 colors?: string;
+                target?: string;
             };
         }
     }
@@ -27,6 +28,7 @@ export function LordIcon(props: any) {
         <lord-icon
             src={props.src}
             trigger={props.trigger || "hover"}
+            target={props.target}
             style={{ width: props.size || 32, height: props.size || 32 }}
         />
     );
