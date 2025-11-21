@@ -28,6 +28,10 @@ export default function RootLayout({
     return (
         <html lang="en">
             <head>
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1.0"
+                />
                 <link
                     rel="stylesheet"
                     href="https://use.typekit.net/urn6xmu.css"
@@ -36,9 +40,9 @@ export default function RootLayout({
             <body>
                 <DZoneBackground />
                 <DiscordCorner />
-                <main>
-                    <div className="md:flex md:gap-10">
-                        <div className="md:w-1/2 md:sticky top-[100px] h-fit md:flex flex-col gap-2">
+                <main className="min-h-screen relative bg-background md:h-screen md:overflow-hidden">
+                    <div className="max-w-[1072px] mx-auto p-8 grid grid-cols-1 md:grid-cols-2 md:max-w-none md:w-full md:p-0 md:m-0 md:h-full">
+                        <div className="md:sticky top-[100px] h-fit flex flex-col gap-2 md:p-20 md:justify-center md:h-full">
                             <h1 className="text-6xl font-extrabold fields">
                                 Tin Nguyen
                             </h1>
@@ -56,9 +60,11 @@ export default function RootLayout({
                                 <Socials />
                             </div>
                         </div>
-                        <div className="md:w-1/2">
-                            <Header />
-                            <div className="my-10 page">{children}</div>
+                        <div className="flex flex-col justify-between md:p-20 md:overflow-y-auto">
+                            <div>
+                                <Header />
+                                <div className="my-10 page">{children}</div>
+                            </div>
                             <Footer />
                         </div>
                     </div>
